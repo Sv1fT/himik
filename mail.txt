@@ -1,0 +1,2 @@
+mail._domainkey	IN	TXT	( "v=DKIM1; k=rsa; "
+	  "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC48bEIPuC3mTfHoF1zqiGh8ZYc81Kn41e6NztPkgPJ0XAGJmCBNiFEr05ni3qidFGb/Mcj+QqIhur+EDPK7f2NBAHNMDi1Weoosug6tYqtP3+cS/M0WhZ9HfxrwNuhzKC8QqXCX3Vn3XK8WnR+JszQivQAEWYV2EIxJHO4f7xPywIDAQAB" )  ; ----- DKIM key mail for opt-himik.ru

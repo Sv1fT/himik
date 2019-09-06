@@ -1,0 +1,248 @@
+.padding_top {
+    padding-top: 15px;
+}
+
+.black {
+    background-color: black;
+    color: black;
+    border-color: black;
+}
+.error{
+    border: 1px solid red;
+}
+hr {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.color-black {
+    color: black;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+}
+
+.sticky1 {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    z-index: 2;
+    top: 50px;
+}
+
+.input {
+    width: 309px;
+    height: 34px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.input_big {
+    width: 553px;
+    max-width: 553px;
+    height: 34px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.resume {
+    border-bottom: 1px solid;
+    padding: 7px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+
+}
+
+.resume a {
+    font-weight: bold;
+    font-size: 12px;
+    color: #00008b;
+}
+
+.resume img {
+    height: 100px;
+    margin: 0 auto;
+}
+
+.resume p {
+    font-size: 12px;
+}
+
+.eye {
+    background-color: #FFFFFF;
+    color: #3e3e3e;
+}
+
+.eye img {
+    margin-top: -2px;
+    margin-right: 4px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+
+}
+
+.margin-top-5 {
+    margin-top: -5px;
+}
+
+.header-b2 {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.modal-backdrop {
+    z-index: 2 !important;
+}
+
+.btn{
+  font-size: 13pt !important;
+  font-weight: normal !important;
+}
+
+.subcategory_adverts{
+  padding-bottom: 0;
+  width: 600px;
+}
+
+select {
+    height: 34px !important;
+}
+
+input[type="submit"] {
+    margin: 0 auto !important;
+    border-width: 0 !important;
+    width: 100%;
+    height: 50px !important;
+    font-size: 13pt !important;
+    font-weight: normal !important;
+    position: relative !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    color: white !important;
+    background-color: orange !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    border-radius: 5px !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+[data-uk-scrollspy*="uk-animation-"]:not([data-uk-scrollspy*="target"]) {
+    opacity: 0;
+}
+.uk-animation-scale-down{
+    -webkit-animation-name:upped-block;
+    animation-name:upped-block;
+}
+.uk-animation-slide-left {
+    -webkit-animation-name: uk-fade-left;
+    animation-name: uk-fade-left;
+}
+
+[class*='uk-animation-'] {
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+#email_tsb::-webkit-input-placeholder { /* Chrome */
+  color: #555555;
+}
+#email_tsb:-ms-input-placeholder { /* IE 10+ */
+  color: #555555;
+}
+#email_tsb::-moz-placeholder { /* Firefox 19+ */
+  color: #555555;
+  opacity: 1;
+}
+#email_tsb:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #555555;
+  opacity: 1;
+}
+
+@media (max-width:768px){
+    .header-b{
+        text-align: center !important;
+    }
+    .header-b2{
+        text-align: center !important;
+    }
+    .modal-dialog{
+      left: 0 !important;
+      width: 100% !important;
+      padding-right: 20px !important;
+    }
+    .modal-content{
+      width: 100% !important;
+    }
+    .advert_subcategory_img{
+      width: 100% !important;
+      height: 200px !important;
+    }
+}
+
+@-webkit-keyframes upped-block {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(1.8);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}
+@keyframes upped-block {
+    0% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes uk-fade-left {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+@keyframes uk-fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
