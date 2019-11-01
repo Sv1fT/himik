@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script> (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter38513335 = new Ya.Metrika({
+                        id: 38513335,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) {
+                }
+            });
+            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks"); </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/38513335" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript> <!-- /Yandex.Metrika counter -->
     <meta name="yandex-verification" content="20e7bf7464734d36"/>
     <meta name='wmail-verification' content='7cd9df90f702efda3e52d63539bdb183'/>
     <meta name="yandex-verification" content="20e7bf7464734d36"/>
@@ -14,12 +43,11 @@
 @yield('meta')
 <!-- Fonts -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link href="{{ asset('css/index_test.css?v1.1')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/index_test.css?v1.1') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/owlcarousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owlcarousel/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css?v1.3') }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -268,35 +296,7 @@ top: 10%;">
             style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика"
             title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
             class="ym-advanced-informer" data-cid="38513335" data-lang="ru"/></a> <!-- /Yandex.Metrika informer -->
-    <!-- Yandex.Metrika counter -->
-    <script> (function (d, w, c) {
-            (w[c] = w[c] || []).push(function () {
-                try {
-                    w.yaCounter38513335 = new Ya.Metrika({
-                        id: 38513335,
-                        clickmap: true,
-                        trackLinks: true,
-                        accurateTrackBounce: true,
-                        webvisor: true
-                    });
-                } catch (e) {
-                }
-            });
-            var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-            s.type = "text/javascript";
-            s.async = true;
-            s.src = "https://mc.yandex.ru/metrika/watch.js";
-            if (w.opera == "[object Opera]") {
-                d.addEventListener("DOMContentLoaded", f, false);
-            } else {
-                f();
-            }
-        })(document, window, "yandex_metrika_callbacks"); </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/38513335" style="position:absolute; left:-9999px;" alt=""/></div>
-    </noscript> <!-- /Yandex.Metrika counter -->
+
 
     <span style="float: right;">
       {{--{{url('/about')}}--}}
@@ -313,11 +313,11 @@ top: 10%;">
 {{--<script src="{{ asset('js/4848c90a5f.js') }}" async></script>--}}
 {{--<script src="{{ asset('js/ckeditor.js') }}" async></script>--}}
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.lazy.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.lazy.plugins.min.js') }}"></script>
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/uikit.min.js') }}" async></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+<script src="{{ asset('js/bootstrap.min.js') }}"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -400,11 +400,8 @@ top: 10%;">
     gtag('config', 'UA-112410116-1');
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+<script src="{{ asset('js/popper.min.js') }}"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
 <script type="text/javascript">

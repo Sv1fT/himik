@@ -173,6 +173,7 @@ return [
          * Package Service Providers...
          */
          TCG\Voyager\VoyagerServiceProvider::class,
+        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -236,6 +237,7 @@ return [
         'Recaptcha' => PheRum\Recaptcha\Facades\Recaptcha::class,
 //      'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Clockwork' => Clockwork\Support\Laravel\Facade::class,
 
     ],
 

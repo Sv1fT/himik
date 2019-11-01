@@ -42,7 +42,7 @@ class HomeController extends Controller
 
 
         $this->data['blog'] = $home->getBlog();
-        $this->data['regions'] = $home->getRegions();
+        // $this->data['regions'] = $home->getRegions();
         $this->data['sledier'] = $home->getSlider();
 
         Session::forget('regiones');

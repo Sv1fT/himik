@@ -12,8 +12,10 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Translation\Loader\ArrayLoader;
 use Symfony\Component\Translation\Translator;
 
@@ -27,14 +29,19 @@ class Home extends Model
 {
 
     public function getCountadvert()
-    {
-        return Advert::where('status',1)->get()->count();
+    {Log::info('123');
+        return $advert = Cache::remember('advert_count',10,function () {
+
+            return Advert::where('status', 1)->count();
+        });
 
     }
 
     public function getUsers()
     {
-        return UserAttributes::all()->count();
+        return $users = Cache::remember('user_counts',10,function () {
+            return UserAttributes::count();
+        });
     }
 
     public function getCategory()
@@ -44,22 +51,26 @@ class Home extends Model
 
     public function getSubcategory()
     {
-        return Subcategory::all()->count();
+        return Subcategory::count();
     }
 
     public function getNewadvertCreate()
     {
-        return Advert::with('citys','types')
-            ->where('advert.show','=','1')
-            ->where('status',1)
-            ->take(3)
-            ->orderBy('created_at','desc')
-            ->get();
+        return $advert = Cache::remember('advert',10,function (){
+            return Advert::with('citys','types')
+                ->where('advert.show','=','1')
+                ->where('status',1)
+                ->take(3)
+                ->orderBy('created_at','desc')
+                ->get();
+        });
     }
     public function getNewadvertUpdate()
     {
-        return Advert::with('citys','types')->where('advert.show','=','1')->where('status',1)
-            ->take(3)->orderBy('date','desc')->get();
+        return $advert_update = Cache::remember('advert_update',10,function () {
+            return Advert::with('citys', 'types')->where('advert.show', '=', '1')->where('status', 1)
+                ->take(3)->orderBy('date', 'desc')->get();
+        });
     }
 
     public function productDay()
@@ -96,29 +107,21 @@ class Home extends Model
         else{
             return Rezume::with('attributes')->where('status',1)->orderBy('id','DESC')->take(5)->get();
         }
-
-
     }
 
     public function getBlog()
     {
-
         $data = Blog::latest()->where('active',1)->take(5)->get()->groupBy(function($date) {
             return $date->created_at->formatLocalized('%d %B %Y');
         });
-
-
-
-
-
        return $data;
-
-
     }
 
     public function getRegions()
     {
-        return Region::orderBy('id','DESC')->get();
+        return $regions = Cache::remember('regions',10,function () {
+            return Region::orderBy('id', 'DESC')->get();
+        });
     }
 
     public function getSlider()

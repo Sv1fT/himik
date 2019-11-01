@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Request $request)
     {
         $account = $request->header('host');
-        
+
         if($account != 'opt-himik.ru' && $account != 'localhost'){
             $account = explode(".",$account);
             $region_tab0 = Region::where('region.slug',$account)->get()->toArray();

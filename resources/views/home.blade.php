@@ -13,11 +13,11 @@
     <meta property="og:title" content="ОПТхимик"/>
     <meta name="description" content="Бизнес объявления России, региона, города. Объявления компаний куплю, продам с ценой и фото на opt-himik.ru" />
     <meta name="keywords" content="бизнес, объявления россии, химия, оптом, opt-himik" />
-    <meta property="og:url" content="http://opt-himik.ru/"/>
+    <meta property="og:url" content="https://opt-himik.ru/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="ru_RU"/>
     <meta property="og:locale:alternate" content="en-us"/>
-    <meta property="og:image" content="http://opt-himik.ru/image/logo_ogg.png"/>
+    <meta property="og:image" content="https://opt-himik.ru/image/logo_ogg.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description"
@@ -190,7 +190,7 @@
 
 
                         <div class="col-5 col-md-12 mb-lg-3 content-home ml-auto mr-auto mt-0 mb-5" itemscope="" itemtype="http://schema.org/Product">
-                            <div class="col-md-4 span-left pr-0 pl-0">
+                            <div class="col-md-4 span-left pr-0 pl-0 mr-2">
                                 @if(Illuminate\Support\Facades\Storage::disk('public')->exists($advertnew->filename))
                                     <img itemprop="image" style="height: 121px" class="img-responsive m-auto lazy" title="{{$advertnew->title}}"
                                          data-src="/storage/{{$advertnew->filename}}"
@@ -243,7 +243,7 @@
 
 
                     <div class="col-5 col-md-12 mb-lg-3 content-home ml-auto mr-auto mt-0 mb-5" itemscope="" itemtype="http://schema.org/Product">
-                        <div class="col-md-4 span-left pr-0 pl-0">
+                        <div class="col-md-4 span-left pr-0 pl-0 mr-2">
                             @if(Illuminate\Support\Facades\Storage::disk('public')->exists($item->filename))
                                 <img itemprop="image" style="height: 121px" class="img-responsive m-auto lazy" title="{{$item->title}}" data-src="/storage/{{$item->filename}}"
                                      alt="{{$item->title}}">

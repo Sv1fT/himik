@@ -55,7 +55,9 @@ class RouteServiceProvider extends ServiceProvider
                 'middleware' => 'web',
                 'namespace' => $this->namespace,
             ], function ($router) {
-
+                if(Route::domain('{account}.opt-himik.ru')){
+                    require base_path('routes/region/web.php');
+                }
                 require base_path('routes/web.php');
             });
     }
