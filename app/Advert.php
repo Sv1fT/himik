@@ -8,7 +8,7 @@ use \SleepingOwl\Admin\Traits\OrderableModel;
 
 class Advert extends Model
 {
-    protected $fillable = ['title', 'content', 'price', 'type', 'mass', 'user_id', 'category', 'subcategory', 'sity', 'region', 'number', 'email', 'show','filename'];
+    protected $fillable = ['title', 'content', 'price', 'type', 'mass', 'user_id', 'category', 'status', 'subcategory', 'sity', 'region', 'number', 'email', 'show','filename'];
     protected $table = 'advert';
 
     protected $timestamp = false;

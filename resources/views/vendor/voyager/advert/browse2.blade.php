@@ -11,9 +11,6 @@
     <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
         <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
     </a>
-    <a href="#" title="Одобрить" class="btn btn-success btn-status">
-        <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Одобрить</span>
-    </a>
     @endcan
     @php $showCheckboxColumn = false @endphp
     @can('delete', app($dataType->model_name))
@@ -389,36 +386,5 @@
         });
         $('.selected_ids').val(ids);
     });
-    $('.btn-status').on('click', function (e) {
-        var sThisVal = {};
-        $('#serialized').empty();
-        $('input[type=checkbox]:checked').each(function () {
-
-            $('#serialized').append('<input name="id[]" value="'+$(this).val()+'">')
-        });
-
-        var _data = $('#serialized').serialize();
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        console.log(_data);
-        $.ajax({
-            type: "POST",
-            url: "/test/update/advert",
-            data: $('#serialized').serialize(),
-            success: function (data) {
-                console.log(data);
-                //$(".search_result").html("<li style='width: 250px'>"+value.title+"</li>").fadeIn();
-                location.reload();
-            },
-            error: function (xhr, str) {
-                alert('Возникла ошибка: ' + xhr.responseCode);
-            }
-        })
-
-    })
 </script>
 @stop

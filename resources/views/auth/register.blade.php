@@ -59,23 +59,27 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                        <div class="form-group" style="    margin: 0 auto;padding-left:243px;">{!! Recaptcha::render() !!}
-                            <div class="mt-4 mx-auto" style=""><div class="">
-                                    <input style="width: 20px" type="checkbox" class="float-left form-control ml-2" required=""><p style="
-    display: inline-block;
-    width: 360px;
-    " class="ml-3">Я соглашаюсь с <a href="" data-toggle="modal" data-target="#exampleModalLong">пользовательским соглашением и политикой конфиденциальности</a> портала ОПТхимик</p></div>
-
-                                <button type="submit" class="btn btn-login" style="
-    background-color: #ffa400;
-    border-color: #ffffff;
-    color: white;
-    font-weight: bold;
-    height: 45px;
-    float:  left;
-    width: 340px;
-    font-size: 14pt;
-    ">
+                        <div class="form-group" style="">
+                            <label for="" class="col-md-4 control-label"></label>
+                            <div class="col-md-6">{!! Recaptcha::render() !!}</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 mt-4 mx-auto" style=""><div class="">
+                                    <p>Если вы создаёте учётную запись, вы автоматически соглашаетесь с <a href="" data-toggle="modal" data-target="#exampleModalLong">пользовательским соглашением и политикой конфиденциальности</a> портала ОПТхимик</p></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12 d-flex justify-content-center">
+                                <button type="submit" class="btn btn-login m-auto" style="
+        background-color: #ffa400;
+        border-color: #ffffff;
+        color: white;
+        font-weight: bold;
+        height: 45px;
+        float:  left;
+        width: 340px;
+        font-size: 14pt;
+        ">
                                     Зарегистрироваться
                                 </button>
                             </div>

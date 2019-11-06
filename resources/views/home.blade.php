@@ -319,7 +319,7 @@
                                       href="/resume/{{$resumes->slug}}">{{$resumes->dolzhnost}}</a></p>
 
                                 @if(Illuminate\Support\Facades\Storage::disk('public')->exists($resumes->filename))
-                                    <img class="img-responsive lazy" data-src="{{asset('/storage/'.$resumes->filename)}}"
+                                    <img class="img-responsive lazy" data-src="{{secure_asset('/storage/'.$resumes->filename)}}"
                                          alt="{{$resumes->dolzhnost}}">
                                 @else
                                     <img class="img-responsive" src="/image/not_found.jpg" alt="ОПТхимик">

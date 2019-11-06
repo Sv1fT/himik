@@ -27,21 +27,39 @@ use Symfony\Component\Translation\Translator;
  */
 class Home extends Model
 {
+    var $regions;
+
+    public function __construct()
+    {
+        $this->regions = session()->get('regiones');
+    }
 
     public function getCountadvert()
-    {Log::info('123');
-        return $advert = Cache::remember('advert_count',10,function () {
+    {
+        $advert = Advert::query();
+        if(!empty($this->regions)){
+            return $advert->where('region',$this->regions)
+                ->orWhere('city',$this->regions)
+                ->orWhere('country',$this->regions)->count();
 
-            return Advert::where('status', 1)->count();
-        });
+        }else{
+            return $advert->count();
 
+        }
     }
 
     public function getUsers()
     {
-        return $users = Cache::remember('user_counts',10,function () {
-            return UserAttributes::count();
-        });
+        $user = UserAttributes::query();
+        if(!empty($this->regions)){
+            return $user->where('region',$this->regions)
+                ->orWhere('city',$this->regions)
+                ->orWhere('country',$this->regions)->count();
+
+        }else{
+            return $user->count();
+
+        }
     }
 
     public function getCategory()
@@ -56,6 +74,19 @@ class Home extends Model
 
     public function getNewadvertCreate()
     {
+//        $advert = Advert::query()->with('citys','types')->where('advert.show','=','1')
+//        ->where('status',1)
+//        ->take(3);
+//
+//        $advert1 = $advert->orderBy('created_at','desc')->get();
+//
+//        $advert2 = $advert->orderBy('date', 'desc')->get();
+//        dd($advert2);
+//        die;
+//        $advert_merge = array_merge($advert1,$advert2);
+
+
+
         return $advert = Cache::remember('advert',10,function (){
             return Advert::with('citys','types')
                 ->where('advert.show','=','1')

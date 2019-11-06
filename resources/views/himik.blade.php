@@ -42,11 +42,11 @@
 @yield('title')
 @yield('meta')
 <!-- Fonts -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link href="{{ asset('css/index_test.css?v1.1') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/owlcarousel/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owlcarousel/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/master.css?v1.3') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap.min.css') }}">
+    <link href="{{ secure_asset('css/index_test.css?v1.1') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ secure_asset('css/owlcarousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/owlcarousel/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/master.css?v1.3') }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
@@ -312,12 +312,12 @@ top: 10%;">
 {{--<script src="{{asset('js/manifest.js')}}" async></script>--}}
 {{--<script src="{{ asset('js/4848c90a5f.js') }}" async></script>--}}
 {{--<script src="{{ asset('js/ckeditor.js') }}" async></script>--}}
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.lazy.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.lazy.plugins.min.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/uikit.min.js') }}" async></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"
+<script src="{{ secure_asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/jquery.lazy.min.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/jquery.lazy.plugins.min.js') }}"></script>
+<script src="{{ secure_asset('js/owl.carousel.min.js') }}"></script>
+<script src="{{ secure_asset('js/uikit.min.js') }}" async></script>
+<script src="{{ secure_asset('js/bootstrap.min.js') }}"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -332,7 +332,6 @@ top: 10%;">
             }
         });
     });
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
 </script>
 @yield('scripts')
 
@@ -400,7 +399,7 @@ top: 10%;">
     gtag('config', 'UA-112410116-1');
 </script>
 
-<script src="{{ asset('js/popper.min.js') }}"
+<script src="{{ secure_asset('js/popper.min.js') }}"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
 
