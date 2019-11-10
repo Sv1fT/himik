@@ -134,4 +134,15 @@ class AdvertController extends Controller
             abort(404);
         }
     }
+
+    public function shortContent()
+    {
+        $advert = Advert::all();
+
+        foreach ($advert as $item){
+            $new_advert = Advert::find($item->id);
+            $new_advert->short_content = str_limit($item->content,80);
+            $new_advert->save();
+        }
+    }
 }

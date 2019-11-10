@@ -13,7 +13,7 @@
 
 use Illuminate\Support\Facades\Artisan;
 
-Route::domain('opt-himik.ru')->group(function () {
+
     Route::get('clear', function() {
         Artisan::call('cache:clear');
         Artisan::call('config:cache');
@@ -87,7 +87,7 @@ Route::domain('opt-himik.ru')->group(function () {
     });
     //Админка
     Route::group(['prefix' => 'admin'], function () {
-        Voyager::routes();
+        Voyager::routes('https');
     });
     //Логин Регистрация
     Route::get('/auth/logout', ['uses' => 'Auth\LoginController@logout']);
@@ -116,11 +116,7 @@ Route::domain('opt-himik.ru')->group(function () {
     Route::get('sitemap','TestController@sitemap');
     Route::get('keywords','TestController@keywords');
     Route::get('advert_4oclock','TestController@advert_4oclock');
-    
 
- Route::get('phponfo',function () {
-     echo phpinfo();
- });
  Route::get('optimize',function () {
    // dd(env('APP_URL').'/storage/app/public/users-attributes');
    $file = \App\UserAttributes::all();
@@ -156,52 +152,6 @@ Route::domain('opt-himik.ru')->group(function () {
 
 
  });
-Route::get('short_content', function (){
-    $advert = App\Advert::all();
-
-    foreach ($advert as $item){
-        $new_advert = App\Advert::find($item->id);
-        $new_advert->short_content = str_limit($item->content,80);
-        $new_advert->save();
-    }
-});
+Route::get('short_content', 'AdvertController@shortContent');
 
     Route::get('/{id}', 'AdvertController@showAdvertsnow');
-//  Route::get('rassilka', function () {
-//      $user = App\User::all();
-//      Notification::send($user, new App\Notifications\getback($user));
-//  });
-//  Route::get('export', 'ExportController@bills_xml_in');
-//
-//  Route::get('slug',function (){
-//
-//
-//      $item = \App\UserAttributes::all();
-//      foreach ($item as $items){
-//         $model1 = \App\Blog::where('user_id',$items->user_id)->get();
-//          $world = \App\UserAttributes::where('user_id',$items->user_id)->get();
-//
-//          foreach ($model1 as $item1)
-//          {
-//
-//
-//
-//
-//
-//
-//              $item1->region = $world[0]->region;
-//              $item1->city = $world[0]->city;
-//              $item1->country = $world[0]->country;
-//
-//
-//              $item1->save();
-//
-//
-//          }
-//      }
-//
-//
-//  });
-
-//
-});
